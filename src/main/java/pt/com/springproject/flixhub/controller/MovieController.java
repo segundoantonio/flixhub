@@ -4,11 +4,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import pt.com.springproject.flixhub.domain.movies.Movie;
 import pt.com.springproject.flixhub.domain.movies.registrationDataMovies;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequestMapping("/movies")
 public class MovieController {
+
+    private List<Movie> movies = new ArrayList<>();
 
     @GetMapping
     public String loadFormPage() {
@@ -17,7 +23,10 @@ public class MovieController {
 
     @PostMapping
     public String registerMovies(registrationDataMovies data) {
-        System.out.println(data);
+        var movie = new Movie(data);
+        movies.add(movie);
+
+        System.out.println(movies);
         return "movies/form";
     }
 }
