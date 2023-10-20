@@ -16,9 +16,14 @@ public class MovieController {
 
     private List<Movie> movies = new ArrayList<>();
 
-    @GetMapping
+    @GetMapping("/form")
     public String loadFormPage() {
         return "movies/form";
+    }
+
+    @GetMapping
+    public String loadListingPage() {
+        return "movies/listing";
     }
 
     @PostMapping
