@@ -33,7 +33,7 @@ public class MovieController {
         var movie = new Movie(data);
         movies.add(movie);
 
-        System.out.println(movies);
-        return "movies/form";
+
+        return "redirect:/movies";
     }
 }
