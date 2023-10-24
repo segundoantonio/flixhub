@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org">
+<html lang="en" xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nx/thymeleaf/layout"
+      layout:decorate="~{template.html}"
+>
 <head>
-    <meta charset="UTF-8">
     <title>Film Listing</title>
 </head>
 <body>
 
+<div layout:fragment="content">
 <h1>Film Listing</h1>
 <table>
     <thead>
@@ -17,14 +20,14 @@
     </tr>
     </thead>
     <tbody>
-<tr th:each="movie : ${list}">
-    <td th:text="${movie.name}"></td>
-    <td th:text="${movie.duration}"></td>
-    <td th:text="${movie.year}"></td>
-    <td th:text="${movie.genre}"></td>
-</tr>
+    <tr th:each="movie : ${list}">
+        <td th:text="${movie.name}"></td>
+        <td th:text="${movie.duration}"></td>
+        <td th:text="${movie.year}"></td>
+        <td th:text="${movie.genre}"></td>
+    </tr>
     </tbody>
 </table>
-
+</div>
 </body>
 </html>
