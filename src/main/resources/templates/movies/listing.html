@@ -9,25 +9,27 @@
 <body>
 
 <div layout:fragment="content">
-<h1>Film Listing</h1>
-<table>
-    <thead>
-    <tr>
-        <th>NAME</th>
-        <th>DURATION</th>
-        <th>YEAR</th>
-        <th>GENRE</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="movie : ${list}">
-        <td th:text="${movie.name}"></td>
-        <td th:text="${movie.duration}"></td>
-        <td th:text="${movie.year}"></td>
-        <td th:text="${movie.genre}"></td>
-    </tr>
-    </tbody>
-</table>
+    <h1>Film Listing</h1>
+    <a href="/movies/form">New</a>
+
+    <table>
+        <thead>
+        <tr>
+            <th>NAME</th>
+            <th>DURATION</th>
+            <th>YEAR</th>
+            <th>GENRE</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="movie : ${list}">
+            <td th:text="${movie.name}"></td>
+            <td th:text="${movie.duration}"></td>
+            <td th:text="${movie.year}"></td>
+            <td th:text="${movie.genre}"></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>
