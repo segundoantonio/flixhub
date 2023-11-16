@@ -1,7 +1,15 @@
 package pt.com.springproject.flixhub.domain.movies;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "movies")
+
 public class Movie {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
     private Integer duration;
     private Integer year;
@@ -23,6 +31,10 @@ public class Movie {
                 ", year=" + year +
                 ", genre='" + genre + '\'' +
                 '}';
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getName() {
