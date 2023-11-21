@@ -42,8 +42,8 @@ public class MovieController {
     }
 
     @DeleteMapping
-    public String deleteMovie(){
-        System.out.println("movie deleted");
+    public String deleteMovie(Long id){
+        repository.deleteById(id);
         return "redirect:/movies";
     }
 }
