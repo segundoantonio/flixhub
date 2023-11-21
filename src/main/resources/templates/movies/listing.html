@@ -19,6 +19,7 @@
             <th>DURATION</th>
             <th>YEAR</th>
             <th>GENRE</th>
+            <th>ACTIONS</th>
         </tr>
         </thead>
         <tbody>
@@ -27,6 +28,12 @@
             <td th:text="${movie.duration}"></td>
             <td th:text="${movie.year}"></td>
             <td th:text="${movie.genre}"></td>
+            <td>
+                <form action="/movies" method="post">
+                    <input type="hidden" name="_method" value="delete">
+                    <input type="submit" value="Delete">
+                </form>
+            </td>
         </tr>
         </tbody>
     </table>

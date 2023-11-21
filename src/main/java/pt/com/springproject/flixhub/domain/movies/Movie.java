@@ -23,6 +23,8 @@ public class Movie {
 
     }
 
+    public Movie(){}
+
     @Override
     public String toString() {
         return "Movie{" +
