@@ -29,6 +29,9 @@
             <td th:text="${movie.year}"></td>
             <td th:text="${movie.genre}"></td>
             <td>
+
+                <a th:href="@{/movies/form?id={id}(id=${movie.id})}">Edit</a>
+
                 <form action="/movies" method="post">
                     <input type="hidden" name="_method" value="delete">
                     <input type="hidden" name="id" th:value="${movie.id}">

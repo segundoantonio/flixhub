@@ -22,7 +22,11 @@ public class MovieController {
     private MovieRepository repository;
 
     @GetMapping("/form")
-    public String loadFormPage() {
+    public String loadFormPage(Long id, Model model) {
+        if (id != null){
+            var movie = repository.getReferenceById(id);
+            model.addAttribute("movie", movie);
+        }
         return "movies/form";
     }
 
