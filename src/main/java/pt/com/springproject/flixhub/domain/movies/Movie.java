@@ -15,7 +15,7 @@ public class Movie {
     private Integer year;
     private String genre;
 
-    public Movie(registrationDataMovies data){
+    public Movie(RegistrationDataMovies data) {
         this.name = data.name();
         this.duration = data.duration();
         this.year = data.year();
@@ -23,7 +23,8 @@ public class Movie {
 
     }
 
-    public Movie(){}
+    public Movie() {
+    }
 
     @Override
     public String toString() {
@@ -53,5 +54,12 @@ public class Movie {
 
     public String getGenre() {
         return genre;
+    }
+
+    public void updateData(UpdatingDataMovies data) {
+        this.name = data.name();
+        this.duration =data.duration();
+        this.year = data.year();
+        this.genre = data.genre();
     }
 }

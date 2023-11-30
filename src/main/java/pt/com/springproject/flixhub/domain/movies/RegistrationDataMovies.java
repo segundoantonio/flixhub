@@ -1,6 +1,6 @@
 package pt.com.springproject.flixhub.domain.movies;
 
-public record registrationDataMovies(
+public record RegistrationDataMovies(
         String name,
         Integer duration,
         Integer year,

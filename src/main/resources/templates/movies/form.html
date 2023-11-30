@@ -11,6 +11,10 @@
 <div layout:fragment="content">
     <h1>Film Register</h1>
     <form method="post" action="/movies">
+
+        <input type="hidden" name="_method" value="put">
+        <input type="hidden" name="id" th:value="${movie.id}">
+
         <div>
             <label for="name">Name:</label>
             <input id="name" name="name" th:value="${movie.name}">
